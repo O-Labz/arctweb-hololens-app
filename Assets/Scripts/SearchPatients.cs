@@ -11,6 +11,7 @@ public class SearchPatients : MonoBehaviour
 
 	private Sprite mySprite;
 
+	public string serverIpAddress = "192.168.1.12";
 
 	// Start is called before the first frame update
 	void Start()
@@ -19,7 +20,7 @@ public class SearchPatients : MonoBehaviour
 		//StartCoroutine(GetRequest("http://localhost:1234/arctweb/"));
 
 		// A non-existing page.
-		StartCoroutine(GetRequest("http://100.64.226.232/arctweb/getuser.php"));
+		StartCoroutine(GetRequest("http://"+serverIpAddress+"/arctweb/getuser.php"));
 
 	}
 
@@ -65,9 +66,9 @@ public class SearchPatients : MonoBehaviour
 
 	IEnumerator Populate(string cardName, string pictureName)
 	{
-		using (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture("http://100.64.226.232/arctweb/images/" + pictureName))
+		using (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture("http://"+serverIpAddress+"/arctweb/images/" + pictureName))
 		{
-			string url = "http://100.64.226.232/arctweb/images/" + pictureName;
+			string url = "http://"+serverIpAddress+"/arctweb/images/" + pictureName;
 			yield return uwr.SendWebRequest();
 
 			if (uwr.isNetworkError || uwr.isHttpError)
