@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class SearchPatients : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class SearchPatients : MonoBehaviour
 		//StartCoroutine(GetRequest("http://localhost:1234/arctweb/"));
 
 		// A non-existing page.
-		StartCoroutine(GetRequest("http://"+serverIpAddress+"/arctweb/getuser.php"));
+		StartCoroutine(GetRequest("http://"+serverIpAddress+"/arctweb/getusers.php"));
 
 	}
 
@@ -90,16 +91,21 @@ public class SearchPatients : MonoBehaviour
 				// Set Image
 				newObj.GetComponent<Image>().sprite = mySprite;
 				// Set button action dynamically
-				newObj.GetComponent<Button>().onClick.AddListener(() => Application.OpenURL(url));
+				newObj.GetComponent<Button>().onClick.AddListener(() => loadScene("PatientInfoScene"));
 				Debug.Log("Done Creating: " + pictureName);
 			}
 		}
 	}
 
-	public void OpenURL(string url)
+	//public void OpenURL(string url)
+	//{
+	//	Application.OpenURL(url);
+	// 	Debug.Log("is this working?");
+	// }
+
+	public void loadScene(string sceneName)
 	{
-		Application.OpenURL(url);
-		Debug.Log("is this working?");
+		SceneManager.LoadScene(sceneName);
 	}
 
 }
