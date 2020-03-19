@@ -15,5 +15,6 @@ public class Patient : ScriptableObject
     public string allergies;
     public string scans;
     public string serverIp;
+    public Sprite profileSprite;
     public string profilePicture;
 }
