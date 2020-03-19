@@ -12,6 +12,8 @@ public class SearchPatients : MonoBehaviour
 
 	private Sprite mySprite;
 
+	public Patient patient;
+
 	public string serverIpAddress = "192.168.1.12";
 
 	// Start is called before the first frame update
@@ -48,6 +50,7 @@ public class SearchPatients : MonoBehaviour
 	{
 		string name;
 		string pic;
+		string id;
 
 		PatientData patients = JsonUtility.FromJson<PatientData>(_json);
 
@@ -60,12 +63,13 @@ public class SearchPatients : MonoBehaviour
 			Debug.Log(data.firstName + " " + data.lastName);
 			name = data.firstName + " " + data.lastName;
 			pic = data.profilePicture;
-			StartCoroutine(Populate(name, pic));
+			id = data.id;
+			StartCoroutine(Populate(name, pic, id));
 		}
 	}
 
 
-	IEnumerator Populate(string cardName, string pictureName)
+	IEnumerator Populate(string cardName, string pictureName, string id)
 	{
 		using (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture("http://"+serverIpAddress+"/arctweb/images/" + pictureName))
 		{
@@ -91,7 +95,7 @@ public class SearchPatients : MonoBehaviour
 				// Set Image
 				newObj.GetComponent<Image>().sprite = mySprite;
 				// Set button action dynamically
-				newObj.GetComponent<Button>().onClick.AddListener(() => loadScene("PatientInfoScene"));
+				newObj.GetComponent<Button>().onClick.AddListener(() => loadScene("PatientInfoScene", id));
 				Debug.Log("Done Creating: " + pictureName);
 			}
 		}
@@ -103,8 +107,10 @@ public class SearchPatients : MonoBehaviour
 	// 	Debug.Log("is this working?");
 	// }
 
-	public void loadScene(string sceneName)
+	public void loadScene(string sceneName, string id)
 	{
+		patient.id = id;
+		patient.serverIp = serverIpAddress;
 		SceneManager.LoadScene(sceneName);
 	}
 
