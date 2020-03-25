@@ -11,11 +11,13 @@ public class PatientMenuDisplay : MonoBehaviour
     private string patientId;
 
 	// Items Displayed in UI
-	public Button profilePic;
+	public Image profilePic;
 	public Text nameText;
 	public Text ageText;
 	public Text genderText;
 	public Text lastVisit;
+
+	Texture newTexture;
 
 	// Start is called before the first frame update
 	void Start()
@@ -62,12 +64,16 @@ public class PatientMenuDisplay : MonoBehaviour
 		}
 		// Fetch image from server
 
+		Debug.Log("Your profile picture is: "+patient.profilePicture);
 		StartCoroutine(GetImage(patient.profilePicture));
-		nameText.text = patient.firstName + " " + patient.lastName;
-		ageText.text = patient.age;
-		genderText.text = patient.gender;
+		nameText.text = "Name: " + patient.firstName + " " + patient.lastName;
+		ageText.text = "Age: " + patient.age;
+		genderText.text = "Gender: " + patient.gender;
 		lastVisit.text = "Last Visit: 02/03/2020";
-		profilePic.image.sprite = patient.profileSprite;
+		// profilePic = (Image)Instantiate(profilePic, transform);
+		// profilePic.sprite = patient.profileSprite;
+		// profilePic.GetComponent<Image>().sprite = patient.profileSprite;
+		// profilePic.GetComponent<Image>().material.mainTexture = newTexture;
 
 		Debug.Log("patient " + patient.id +" data loaded");
 	}
@@ -90,7 +96,8 @@ public class PatientMenuDisplay : MonoBehaviour
 
 				myTexture = DownloadHandlerTexture.GetContent(uwr);
 
-				patient.profileSprite = Sprite.Create(myTexture, new Rect(0.0f, 0.0f, myTexture.width, myTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
+				profilePic.sprite  = Sprite.Create(myTexture, new Rect(0.0f, 0.0f, myTexture.width, myTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
+
 
 			}
 		}
