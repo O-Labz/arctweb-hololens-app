@@ -22,6 +22,8 @@ public class DicomScrub : MonoBehaviour
         {
             // Only get files that begin with the letter "c".
             fileBundle = Directory.GetFiles(@"C:\Users\Omri\Downloads\trauma\");
+            ScrubSlider = ScrubSlider.GetComponent<Slider>();
+            ScrubSlider.maxValue = fileBundle.Length;
             ShowImage(0);
             //Debug.Log(dirs.Length);
             //foreach (string dir in dirs)
@@ -38,7 +40,6 @@ public class DicomScrub : MonoBehaviour
     //fetch images as the slider moves
     public void ScrubDicom() 
     {
-        ScrubSlider = ScrubSlider.GetComponent<Slider>();
         int value = (int)ScrubSlider.value;
         ShowImage(value);
     }
