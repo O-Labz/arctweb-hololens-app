@@ -6,12 +6,11 @@ using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour
 {
-    public GameObject button;
-    void GoToScene()
+    public void GoToScene()
     {
         //scene = sceneName;
-        GameObject newObj;
-        newObj = (GameObject)Instantiate(button, transform);
-        newObj.GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("CtScene"));
+        Debug.Log("about to press button");
+        SceneManager.LoadScene("CtScene");
+        Debug.Log("button press complete");
     }
 }

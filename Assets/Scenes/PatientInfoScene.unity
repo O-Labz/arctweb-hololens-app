@@ -936,6 +936,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 695345539}
+        m_MethodName: GoToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Events: []
   enabledOnStart: 1
 --- !u!114 &695345534
@@ -968,18 +979,6 @@ MonoBehaviour:
   ButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 695345532}
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 170429180f309a940b54c1001e94e54c,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 695345539}
         m_MethodName: GoToScene
         m_Mode: 1
@@ -1088,7 +1087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaac6df1d134a6241b1b7c7bda59b23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: ctScene
 --- !u!1 &771158760
 GameObject:
   m_ObjectHideFlags: 0

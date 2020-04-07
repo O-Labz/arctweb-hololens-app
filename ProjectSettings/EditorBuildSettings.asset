@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PatientInfoScene.unity
     guid: 50b58acdf799df94db7cce98c1cc4920
+  - enabled: 1
+    path: Assets/Scenes/CtScene.unity
+    guid: 0c46f3079db11b945bb21b115b873e3a
   m_configObjects: {}
