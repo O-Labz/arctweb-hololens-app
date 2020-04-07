@@ -770,6 +770,7 @@ GameObject:
   - component: {fileID: 695345534}
   - component: {fileID: 695345533}
   - component: {fileID: 695345532}
+  - component: {fileID: 695345539}
   m_Layer: 0
   m_Name: ScanButton
   m_TagString: Untagged
@@ -979,6 +980,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 695345539}
+        m_MethodName: GoToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ButtonReleased:
     m_PersistentCalls:
       m_Calls: []
@@ -1064,6 +1076,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695345530}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &695345539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695345530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaac6df1d134a6241b1b7c7bda59b23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: ctScene
 --- !u!1 &771158760
 GameObject:
   m_ObjectHideFlags: 0
