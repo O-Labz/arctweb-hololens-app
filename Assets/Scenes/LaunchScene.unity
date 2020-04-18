@@ -112,6 +112,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &120281594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 120281596}
+  - component: {fileID: 120281595}
+  m_Layer: 0
+  m_Name: AsyncCoroutineRunner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &120281595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120281594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6ecbbf0b5840b09d7b4ee7f0a62b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &120281596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120281594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &140330663
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140330663}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.529646, y: 0.7112823, z: -14.133658}
+  m_LocalPosition: {x: 0, y: 0, z: 1.9}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1319597116}
@@ -239,8 +282,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443120445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.61, y: -1.94, z: 16.99}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 140330665}
   - {fileID: 1143899173}
@@ -268,7 +311,7 @@ MonoBehaviour:
   lifetime: 0
   orientationType: 0
   localOffset: {x: 0, y: 0, z: 0}
-  worldOffset: {x: 0, y: -0.4, z: 0.3}
+  worldOffset: {x: 0, y: 0, z: 0.5}
   useAngleStepping: 0
   tetherAngleSteps: 6
 --- !u!114 &443120448
@@ -365,6 +408,37 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1319597115}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &859403956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859403955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b3eff181cc4244a8a14234096e62fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFocusRequired: 0
+  keywords:
+  - keyword: Qr Search
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 859403963}
+          m_MethodName: GoToScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  persistentKeywords: 0
+  speechConfirmationTooltipPrefab: {fileID: 0}
 --- !u!114 &859403963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaac6df1d134a6241b1b7c7bda59b23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SearchScene
+  sceneName: QrScene
 --- !u!1001 &1043374924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -567,6 +641,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: SearchScene
+--- !u!114 &1043374928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043374926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b3eff181cc4244a8a14234096e62fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFocusRequired: 0
+  keywords:
+  - keyword: Show Patients
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1043374927}
+          m_MethodName: GoToScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  persistentKeywords: 0
+  speechConfirmationTooltipPrefab: {fileID: 0}
 --- !u!1 &1143899172
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +700,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143899172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -14.133658}
+  m_LocalPosition: {x: 0, y: 0, z: 1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 443120446}
@@ -603,7 +708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.529646, y: 1.0312823}
+  m_AnchoredPosition: {x: 0, y: 0.24}
   m_SizeDelta: {x: 2.624, y: 0.227}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143899174
