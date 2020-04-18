@@ -539,9 +539,10 @@ PlayerSettings:
   scriptingDefineSymbols:
     4: 
     7: 
-    14: DOTNETWINRT_PRESENT
+    14: master;DOTNETWINRT_PRESENT
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Metro: 1
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
@@ -552,7 +553,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template3D
-  metroPackageVersion: 1.0.0.0
+  metroPackageVersion: 1.0.4.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
@@ -579,7 +580,7 @@ PlayerSettings:
       Appointments: False
       BackgroundMediaPlayback: False
       BlockedChatMessages: False
-      Bluetooth: False
+      Bluetooth: True
       Chat: False
       CodeGeneration: False
       Contacts: False
@@ -587,7 +588,7 @@ PlayerSettings:
       HumanInterfaceDevice: False
       InputInjectionBrokered: False
       InternetClient: True
-      InternetClientServer: True
+      InternetClientServer: False
       Location: False
       LowLevelDevices: False
       Microphone: True
@@ -599,7 +600,7 @@ PlayerSettings:
       PicturesLibrary: False
       PointOfService: False
       PrivateNetworkClientServer: False
-      Proximity: False
+      Proximity: True
       RecordedCallsFolder: False
       RemoteSystem: False
       RemovableStorage: False
@@ -611,7 +612,7 @@ PlayerSettings:
       UserNotificationListener: False
       VideosLibrary: False
       VoipCall: False
-      WebCam: False
+      WebCam: True
   metroTargetDeviceFamilies:
     Desktop: False
     Holographic: True
