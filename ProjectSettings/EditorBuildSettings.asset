@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LaunchScene.unity
     guid: de277d51fc8e05a45916b75d61d36cf0
   - enabled: 1
-    path: Assets/QRCode/QRCode.unity
+    path: Assets/Scenes/QrScene.unity
     guid: 0453e76e9b063c445b10a27eaf11c08c
   - enabled: 1
     path: Assets/Scenes/SearchScene.unity

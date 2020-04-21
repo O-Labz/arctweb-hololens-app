@@ -587,8 +587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6725669914108989673, guid: c548326ebff85c3428bf6150a7f1295e, type: 3}
-  patient: {fileID: 0}
-  serverIpAddress: 192.168.1.13
+  patient: {fileID: 11400000, guid: 3ca921bbffa8e834294256ad34093f44, type: 2}
+  serverIpAddress: 192.168.1.16
 --- !u!114 &658281747
 MonoBehaviour:
   m_ObjectHideFlags: 0

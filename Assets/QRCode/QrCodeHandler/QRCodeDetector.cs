@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using Microsoft.MixedReality.QR;
+using UnityEngine.SceneManagement;
 
 using Microsoft.MixedReality.Toolkit.UI;
 using QRTracking;
@@ -42,6 +43,7 @@ namespace QRCodeTracking
                 
                 the_qrcode = qrCode;
                 onQRCode.Invoke();
+                SceneManager.LoadScene("SearchScene");
             }
         }
 
