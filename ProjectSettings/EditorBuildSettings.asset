@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SearchScene.unity
     guid: f12591290ad9bfe4aa82b813f35c7ee0
+  - enabled: 1
+    path: Assets/Scenes/PatientInfoScene.unity
+    guid: cff6a1a0efe9ab945a64e1b989a1df6d
   m_configObjects: {}
