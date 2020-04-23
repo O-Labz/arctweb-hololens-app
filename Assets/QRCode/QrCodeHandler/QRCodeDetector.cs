@@ -20,6 +20,7 @@ namespace QRCodeTracking
         private Microsoft.MixedReality.QR.QRCode the_qrcode;
         private Pose QRPose;
         private GameObject qrCodeObject = null;
+        public GlobalIp global;
 
 #if WINDOWS_UWP
         private SpatialCoordinateSystem CoordinateSystem = null;
@@ -43,7 +44,8 @@ namespace QRCodeTracking
                 
                 the_qrcode = qrCode;
                 onQRCode.Invoke();
-                SceneManager.LoadScene("SearchScene");
+                global.centralPatientId = qrCode.Data.ToString();
+                SceneManager.LoadScene("PatientInfoScene");
             }
         }
 

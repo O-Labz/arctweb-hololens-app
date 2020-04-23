@@ -14,7 +14,9 @@ public class SearchPatients : MonoBehaviour
 
 	public Patient patient;
 
-	public string serverIpAddress = "192.168.1.12";
+	public GlobalIp global ;
+
+	private string serverIpAddress;
 
 	// Start is called before the first frame update
 	void Start()
@@ -23,6 +25,7 @@ public class SearchPatients : MonoBehaviour
 		//StartCoroutine(GetRequest("http://localhost:1234/arctweb/"));
 
 		// A non-existing page.
+		serverIpAddress = global.applicationIpaddress;
 		StartCoroutine(GetRequest("http://"+serverIpAddress+"/arctweb/getusers.php"));
 
 	}
@@ -101,15 +104,10 @@ public class SearchPatients : MonoBehaviour
 		}
 	}
 
-	//public void OpenURL(string url)
-	//{
-	//	Application.OpenURL(url);
-	// 	Debug.Log("is this working?");
-	// }
-
 	public void loadScene(string sceneName, string id)
 	{
 		patient.id = id;
+		global.centralPatientId = id;
 		patient.serverIp = serverIpAddress;
 		SceneManager.LoadScene(sceneName);
 	}

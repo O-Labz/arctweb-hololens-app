@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PatientMenuDisplay : MonoBehaviour
 {
     public Patient patient;
+	public GlobalIp global;
     private string ipAddress;
     private string patientId;
 
@@ -22,8 +23,8 @@ public class PatientMenuDisplay : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        patientId = patient.id;
-		ipAddress = patient.serverIp;
+        patientId = global.centralPatientId;
+		ipAddress = global.applicationIpaddress;
         StartCoroutine(GetRequest("http://" + ipAddress + "/arctweb/getuser.php?user=" + patientId));
     }
 

@@ -785,6 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patient: {fileID: 11400000, guid: 3ca921bbffa8e834294256ad34093f44, type: 2}
+  global: {fileID: 0}
   profilePic: {fileID: 180776451}
   nameText: {fileID: 892759228}
   ageText: {fileID: 1934864513}
@@ -1374,6 +1375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patient: {fileID: 11400000, guid: 3ca921bbffa8e834294256ad34093f44, type: 2}
+  global: {fileID: 11400000, guid: 02b2989b96189ed43937ec925c375228, type: 2}
   profilePic: {fileID: 180776451}
   nameText: {fileID: 892759228}
   ageText: {fileID: 1934864513}

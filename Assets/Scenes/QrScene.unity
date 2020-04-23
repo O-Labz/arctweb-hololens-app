@@ -952,7 +952,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 71840491963d5c545a70584afb907df4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 82bb32b8900f55c488f190d835ffcd99, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -998,7 +998,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.666
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 1488803994}
-  ExpectedQRCodeText: id=1
+  ExpectedQRCodeText: 0
   qrCodePrefab: {fileID: 1958783570294104, guid: d3f436728a834c94eb3d882d0dabd410,
     type: 3}
   onQRCode:
@@ -1068,6 +1068,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  global: {fileID: 11400000, guid: 02b2989b96189ed43937ec925c375228, type: 2}
 --- !u!1001 &651712835
 PrefabInstance:
   m_ObjectHideFlags: 0
