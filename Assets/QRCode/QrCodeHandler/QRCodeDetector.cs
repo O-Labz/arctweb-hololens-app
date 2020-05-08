@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -38,15 +39,29 @@ namespace QRCodeTracking
             // new QR code detected
             
             
-            if (ExpectedQRCodeText == qrCode.Data)
-            {               
+            //if (ExpectedQRCodeText == qrCode.Data)
+            //{               
                 
                 
-                the_qrcode = qrCode;
-                onQRCode.Invoke();
-                global.centralPatientId = qrCode.Data.ToString();
-                SceneManager.LoadScene("PatientInfoScene");
-            }
+                //the_qrcode = qrCode;
+                //onQRCode.Invoke();
+                //ExpectedQRCodeText = qrCode.Data.ToString();
+                //Debug.Log("now we Debug qr.data : " + qrCode.Data);
+                //Console.WriteLine("now we Debug qr.data : " + qrCode.Data);
+                //Debug.Log("now we Debug qr.data to string : " + qrCode.Data.ToString());
+                //Console.WriteLine("now we Debug qr.data to string : " + qrCode.Data.ToString());
+                //Debug.Log("now we Debug qr.data info text: " + info.text);
+                //Console.WriteLine("now we Debug qr.data info text: " + info.text);
+                //Debug.Log("now we Debug qr.data : " + the_qrcode);
+                //Console.WriteLine("now we Debug qr.data : " + the_qrcode);
+                //global.centralPatientId = ExpectedQRCodeText;
+                //SceneManager.LoadScene("PatientInfoScene");
+            //}
+            the_qrcode = qrCode;
+            onQRCode.Invoke();
+            ExpectedQRCodeText = qrCode.Data.ToString();
+            global.centralPatientId = ExpectedQRCodeText;
+            SceneManager.LoadScene("PatientInfoScene");
         }
 
         private bool GetPoseFromSpatialNode(System.Guid nodeId, out Pose pose)

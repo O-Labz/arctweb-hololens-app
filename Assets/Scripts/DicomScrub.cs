@@ -1,15 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System;
 using Dicom;
 using Dicom.Imaging;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DicomScrub : MonoBehaviour
 {
     private Texture2D DicomTexture;
+    private Texture2D[] Textures;
+    public TextMeshPro text;
     public Image dicom2D;
     public Slider ScrubSlider;
     private Sprite mySprite;
@@ -20,20 +21,29 @@ public class DicomScrub : MonoBehaviour
     {
         try
         {
+
+
             // Only get files that begin with the letter "c".
-            fileBundle = Directory.GetFiles(@"C:\Users\Omri\Downloads\trauma\");
+            string path = Path.Combine(Application.persistentDataPath, "Dicom/headct/");
+            fileBundle = Directory.GetFiles(path);
             ScrubSlider = ScrubSlider.GetComponent<Slider>();
             ScrubSlider.maxValue = fileBundle.Length;
             ShowImage(0);
             //Debug.Log(dirs.Length);
-            //foreach (string dir in dirs)
-            //{
+            foreach (string dir in fileBundle)
+            {
             //    Debug.Log(dir);
-            //}
+                text.text = path + dir;
+                Debug.Log(text);
+            }
+
+
         }
-        catch (Exception e)
+        catch(Exception e)
         {
-            Debug.Log("Failed to get files: " + e.ToString());
+            text.text = e.Message.ToString();
+            Debug.Log(text);
+            Debug.Log("Failed to get files: " + e.Message.ToString());
         }
     }
 
