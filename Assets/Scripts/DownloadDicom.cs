@@ -17,7 +17,7 @@ public class DownloadDicom : MonoBehaviour
     {
         // A non-existing page.
         serverIpAddress = global.applicationIpaddress;
-        StartCoroutine(GetRequest("http://"+serverIpAddress+"/arctweb/getdicom.php"));
+        StartCoroutine(GetRequest("http://" + serverIpAddress + "/arctweb/getdicom.php"));
     }
 
     IEnumerator GetRequest(string uri)
@@ -59,15 +59,15 @@ public class DownloadDicom : MonoBehaviour
 
     IEnumerator DownloadFile(string filename)
     {
-        var uwr = new UnityWebRequest("http://192.168.1.16/arctweb/dicom/headct/"+filename+"", UnityWebRequest.kHttpVerbGET);
-        string path = Path.Combine(Application.persistentDataPath, "Dicom/headct/"+filename);
+        var uwr = new UnityWebRequest("http://" + serverIpAddress + "/arctweb/dicom/headct/" + filename + "", UnityWebRequest.kHttpVerbGET);
+        string path = Path.Combine(Application.persistentDataPath, "Dicom/headct/" + filename);
         uwr.downloadHandler = new DownloadHandlerFile(path);
         yield return uwr.SendWebRequest();
         if (uwr.isNetworkError || uwr.isHttpError)
             Debug.LogError(uwr.error);
         else
             text.text = path;
-            Debug.Log(text);
-            Debug.Log("File successfully downloaded and saved to " + path);
+        Debug.Log(text);
+        Debug.Log("File successfully downloaded and saved to " + path);
     }
 }

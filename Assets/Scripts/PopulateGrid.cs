@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using System.IO;
+using Dicom;
+using Dicom.Imaging;
 
 // UnityWebRequest.Get example
 
@@ -14,33 +17,52 @@ public class PopulateGrid : MonoBehaviour
 
 	public GameObject prefab; // This is our prefab object that will be exposed in the inspector
 
-	private int numberToCreate = 10; // number of objects to create. Exposed in inspector
+	private int numberToCreate = 0; // number of objects to create. Exposed in inspector
+
+	private Texture2D DicomTexture;
+	private Sprite mySprite;
+	private string[] fileBundle;
+
+	private string path;
 
 	void Start()
 	{
-		Populate();
-	}
 
-	void Update()
-	{
+		GameObject newObj;
 
-	}
+		// Only get files that begin with the letter "c".
+		path = Path.Combine(Application.persistentDataPath, "Dicom/headct/");
 
-	void Populate()
-	{
-		GameObject newObj; // Create GameObject instance
+		Debug.Log(path);
 
-		for (int i = 0; i < numberToCreate; i++)
+		fileBundle = Directory.GetFiles(path);
+
+		numberToCreate = fileBundle.Length;
+
+		//Debug.Log(dirs.Length);
+		foreach (string dir in fileBundle)
 		{
-			// Create new instances of our prefab until we've created as many as we specified
+			//    Debug.Log(dir);
+			Debug.Log(numberToCreate);
+
+			//Debug.Log(dir.ToString());
+
 			newObj = (GameObject)Instantiate(prefab, transform);
-			newObj.GetComponentInChildren<Text>().text = "testing: " + i;
 
-			// Randomize the color of our image
-			//newObj.GetComponent().color = Random.ColorHSV();
+			var stream = File.OpenRead(dir.ToString());
+
+			var file = DicomFile.Open(stream);
+
+			DicomTexture = new DicomImage(file.Dataset).RenderImage().AsTexture2D();
+
+			mySprite = Sprite.Create(DicomTexture, new Rect(0.0f, 0.0f, DicomTexture.width, DicomTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+			// Set Text
+			//newObj.GetComponentInChildren<Text>().text = "000112.dcm";
+			//// Set Image
+			newObj.GetComponent<Image>().sprite = mySprite;
+
 		}
-
-		Debug.Log("Done Creating Images");
 
 	}
 
