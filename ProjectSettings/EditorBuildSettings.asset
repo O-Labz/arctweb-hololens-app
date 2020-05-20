@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PatientInfoScene.unity
     guid: cff6a1a0efe9ab945a64e1b989a1df6d
   - enabled: 1
-    path: Assets/Scenes/CtScene.unity
+    path: Assets/Scenes/ctScene.unity
     guid: 6a9f884dbd5079c4e815ebd4a65a7cca
+  - enabled: 1
+    path: Assets/Scenes/VolumeScene.unity
+    guid: 7366c6a0cee08f04ba5a9f05122fac35
   m_configObjects: {}
